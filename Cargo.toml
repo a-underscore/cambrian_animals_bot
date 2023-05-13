@@ -1,0 +1,12 @@
+[package]
+name = "cambrian_animals_bot"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.71"
+chrono = "0.4.24"
+dotenv = "0.15.0"
+reqwest = "0.11.17"
+serenity = "0.11.5"
+tokio = { version = "1.28.1", features = ["macros", "rt-multi-thread"] }
