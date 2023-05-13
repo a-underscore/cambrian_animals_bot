@@ -38,7 +38,7 @@ impl EventHandler for Handler {
             loop {
                 let _ = interval.tick().await;
 
-                if let Some(message) = get_animal().await.ok() {
+                if let Ok(message) = get_animal().await {
                     for guild_id in cache.guilds() {
                         if let Ok(guild) = guild_id.to_partial_guild(&http).await {
                             if let Ok(channels) = guild.channels(http).await {
@@ -46,7 +46,7 @@ impl EventHandler for Handler {
                                     .values()
                                     .find(|channel| {
                                         if let ChannelType::Text = channel.kind {
-                                            return channel.name == general_channel_name;
+                                            channel.name == general_channel_name
                                         } else {
                                             false
                                         }
