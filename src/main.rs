@@ -15,7 +15,7 @@ use serenity::{
 use std::{collections::HashSet, env, time::Duration};
 use tokio::time;
 
-const URL: &str = "https://en.wikipedia.org/wiki/Special:RandomInCategory/Cambrian_animals";
+const URL: &str = "https://en.wikipedia.org/wiki/Special:RandomInCategory/Extinct_animals";
 
 #[group]
 #[commands(ping, animal)]
